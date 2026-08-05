@@ -37,7 +37,7 @@ The website focuses on a clean, minimal interface with smooth animations and a d
 
 <p align="center">
 
-<img src="https://skillicons.dev/icons?i=nextjs,react,tailwind,framer,git,vscode&theme=dark"/>
+<img src="https://skillicons.dev/icons?i=nextjs,react,tailwind,git,vscode&theme=dark"/>
 
 </p>
 
