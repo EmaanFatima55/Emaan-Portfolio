@@ -18,10 +18,10 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 
   emailjs
     .sendForm(
-      "service_krw7j1c",
+      "service_azwcknm",
       "template_i12unf7",
       form.current,
-      "OgI9Q4ENrgvEv_mTH"
+      "UawnOqemhgSFOGdUo"
     )
     .then(() => {
       alert("Message sent successfully!");
@@ -29,14 +29,15 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
       setLoading(false);
     })
     .catch((error) => {
-  console.log("EmailJS Error:", error);
+  console.log(error);
+  console.log(error.text);
+  console.log(error.status);
 
-  alert(
-    `Error: ${error.text || error.message || JSON.stringify(error)}`
-  );
+  alert(error.text || error.message || JSON.stringify(error));
 
   setLoading(false);
 });
+
 };
   return (
     <section
