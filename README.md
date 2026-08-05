@@ -1,70 +1,56 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=soft&color=0:F3E8FF,100:7C3AED&height=180&section=header&text=My%20Portfolio&fontSize=45&fontColor=FFFFFF&animation=fadeIn"/>
+# 🌷 Personal Portfolio
 
-# Personal Portfolio
-
-### A modern portfolio website built to showcase my work, skills and development journey.
-
-<br/>
-
-![Next.js](https://img.shields.io/badge/Next.js-18181B?style=flat-square&logo=next.js&logoColor=FFFFFF)
-![React](https://img.shields.io/badge/React-18181B?style=flat-square&logo=react&logoColor=61DAFB)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-18181B?style=flat-square&logo=tailwindcss&logoColor=38BDF8)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-18181B?style=flat-square&logo=framer&logoColor=BB86FC)
+### A modern portfolio website showcasing my skills, projects and web development journey.
 
 </div>
 
 ---
 
-## 🌷 About
+## ✨ About
 
-This is my personal portfolio website where I showcase my projects, technical skills and experience as a web developer.
-
-The website is designed with a clean and modern interface, smooth animations and an interactive visual background.
+This is my personal portfolio website built to showcase my work, skills and projects as a web developer.
 
 ---
 
-## ✦ Highlights
+## 🛠️ Built With
 
-| Feature | Description |
-|---|---|
-| 📱 Responsive | Works across desktop, tablet and mobile screens |
-| ✨ Animations | Smooth page and component animations |
-| 🌌 Interactive Background | Animated particles and visual effects |
-| 💼 Projects | Showcase of my web development projects |
-| 🛠 Skills | Technologies and tools I work with |
-| 📩 Contact | Easy way to get in touch |
-| 📄 CV | Quick access to my CV |
+- Next.js
+- React
+- Tailwind CSS
+- Framer Motion
 
 ---
 
-## 🧩 Tech Stack
+## 🚀 Features
 
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=nextjs,react,tailwind,framer,git,github,vscode&theme=light"/>
-
-</div>
+- Responsive design
+- Smooth animations
+- Interactive background
+- Projects showcase
+- Skills section
+- Services section
+- Contact section
+- Download CV
 
 ---
 
-## 📂 Project Structure
+## 📂 Projects
 
-```text
-Portfolio
-│
-├── app
-├── components
-│   ├── Navbar
-│   ├── Hero
-│   ├── About
-│   ├── Services
-│   ├── Projects
-│   ├── Stack
-│   ├── Contact
-│   └── Footer
-│
-├── public
-│
-└── package.json
+### 🌐 Portfolio Website
+Personal portfolio built with Next.js, Tailwind CSS and Framer Motion.
+
+### 🛒 E-Commerce Website
+A full-stack MERN e-commerce application with product management and shopping cart functionality.
+
+### ✅ To-Do List Web App
+A task management web app with Light & Dark themes, progress tracking, motivational quotes and animated background effects.
+
+---
+
+## 💻 Run Locally
+
+```bash
+npm install
+npm run dev
