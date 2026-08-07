@@ -1,0 +1,207 @@
+/* =========================================================
+   GLOWING ORBS
+========================================================= */
+
+.glow{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(8px);
+    pointer-events:none;
+}
+
+.glow-one{
+    width:420px;
+    height:420px;
+    top:-170px;
+    left:-100px;
+    background:radial-gradient(circle,rgba(34,211,238,.28),transparent 72%);
+    animation:floatGlowOne 12s ease-in-out infinite alternate;
+}
+
+.glow-two{
+    width:470px;
+    height:470px;
+    right:-190px;
+    top:18%;
+    background:radial-gradient(circle,rgba(6,182,212,.22),transparent 72%);
+    animation:floatGlowTwo 15s ease-in-out infinite alternate;
+}
+
+.glow-three{
+    width:390px;
+    height:390px;
+    left:35%;
+    bottom:-220px;
+    background:radial-gradient(circle,rgba(103,232,249,.18),transparent 70%);
+    animation:floatGlowThree 13s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlowOne{
+    from{transform:translate(0,0) scale(1);}
+    to{transform:translate(80px,60px) scale(1.15);}
+}
+
+@keyframes floatGlowTwo{
+    from{transform:translate(0,0) scale(1);}
+    to{transform:translate(-80px,70px) scale(1.12);}
+}
+
+@keyframes floatGlowThree{
+    from{transform:translate(0,0);}
+    to{transform:translate(80px,-50px);}
+}
+
+
+/* =========================================================
+   FLOATING CIRCLES
+========================================================= */
+
+.floating-circle{
+    position:absolute;
+    border-radius:50%;
+    background:linear-gradient(145deg,rgba(5,25,35,.45));
+    border:1px solid rgba(34,211,238,.25);
+    box-shadow:0 0 35px rgba(34,211,238,.15);
+    backdrop-filter:blur(4px);
+    animation:floatingCircle 8s ease-in-out infinite alternate;
+}
+
+.circle-one{
+    width:85px;
+    height:85px;
+    left:6%;
+    bottom:18%;
+}
+
+.circle-two{
+    width:46px;
+    height:46px;
+    right:11%;
+    top:24%;
+    animation-delay:-3s;
+}
+
+.circle-three{
+    width:24px;
+    height:24px;
+    left:19%;
+    top:17%;
+    animation-delay:-5s;
+}
+
+@keyframes floatingCircle{
+    from{transform:translateY(0);}
+    to{transform:translateY(-22px);}
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.stars{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+
+    background-image:
+        radial-gradient(circle,
+        rgba(255,255,255,.9) 1px,
+        transparent 1.8px);
+
+    background-size:145px 125px;
+    background-position:20px 15px;
+
+    opacity:.45;
+
+    animation:starsMove 20s linear infinite;
+}
+
+.stars::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:
+        radial-gradient(circle,
+        rgba(34,211,238,.85) 1px,
+        transparent 2px);
+
+    background-size:220px 180px;
+    background-position:70px 40px;
+
+    opacity:.45;
+}
+
+.stars::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:
+        radial-gradient(circle,
+        rgba(103,232,249,.9) 1.5px,
+        transparent 2.5px);
+
+    background-size:310px 260px;
+    background-position:140px 100px;
+
+    opacity:.35;
+
+    animation:starPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes starsMove{
+    from{transform:translateY(0);}
+    to{transform:translateY(25px);}
+}
+
+@keyframes starPulse{
+    from{opacity:.2;}
+    to{opacity:.7;}
+}
+
+
+/* =========================================================
+   SPARKLES
+========================================================= */
+
+.sparkles{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+.sparkle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+        0 0 5px #fff,
+        0 0 12px #22d3ee,
+        0 0 25px #06b6d4;
+
+    animation:sparkleAnimation 3s ease-in-out infinite;
+}
+
+@keyframes sparkleAnimation{
+
+    0%{
+        opacity:0;
+        transform:scale(.3) rotate(0deg);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.5) rotate(180deg);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(.3) rotate(360deg);
+    }
+}

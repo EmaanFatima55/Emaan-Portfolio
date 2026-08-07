@@ -14,7 +14,7 @@ body {
 }
 
 section {
-  padding: 90px 8%;
+  padding: 70px 8%;
 }
 
 .glow {
@@ -23,10 +23,13 @@ section {
 
 .card {
   background: rgba(15,23,42,.6);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(4px);
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 18px;
-  transition: .35s;
+  transition:
+  transform .18s ease,
+border-color .18s ease,
+box-shadow .18s ease;
 }
 
 .card:hover {
@@ -97,10 +100,10 @@ body::before {
     radial-gradient(circle at 80% 15%, rgba(34,211,238,.10), transparent 28%),
     radial-gradient(circle at 50% 65%, rgba(34,211,238,.06), transparent 40%);
 
-  filter: blur(30px);
+  filter: blur(12px);
 }
 
-/* Background Grid */
+/* Background Grid
 
 body::after {
   content: "";
@@ -117,4 +120,286 @@ body::after {
 
   opacity: .45;
 }
+ */
 
+
+
+ /* =========================================
+   PORTFOLIO BACKGROUND
+========================================= */
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.portfolio-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+  background: #050b14;
+}
+
+
+/* =========================================
+   EXTRA HUGE CYAN GLOW BLOBS
+========================================= */
+
+.glow-blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+
+/* TOP-LEFT */
+.glow-blob-1 {
+  width: 650px;
+  height: 650px;
+  left: -150px;
+  top: -150px;
+  background: radial-gradient(
+    circle,
+    rgba(34, 211, 238, 0.22) 0%,
+    rgba(34, 211, 238, 0.12) 32%,
+    rgba(34, 211, 238, 0.06) 52%,
+    transparent 72%
+  );
+}
+
+/* BOTTOM-RIGHT */
+.glow-blob-2 {
+  width: 1000px;
+  height: 1000px;
+  right: -350px;
+  bottom: -400px;
+  top: auto;
+  background: radial-gradient(
+    circle,
+    rgba(34, 211, 238, 0.20) 0%,
+    rgba(34, 211, 238, 0.11) 30%,
+    rgba(34, 211, 238, 0.055) 52%,
+    transparent 72%
+  );
+}
+
+/* BETWEEN BOTTOM-CENTER AND LEFT */
+.glow-blob-3 {
+  width: 800px;
+  height: 800px;
+  left: -7%;
+  bottom: -400px;
+  background: radial-gradient(
+    circle,
+    rgba(6, 182, 212, 0.18) 0%,
+    rgba(6, 182, 212, 0.10) 32%,
+    rgba(6, 182, 212, 0.05) 52%,
+    transparent 72%
+  );
+}
+
+/* CENTER — fullest/biggest one */
+.glow-blob-4 {
+  width: 850px;
+  height: 850px;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(34, 211, 238, 0.22) 0%,
+    rgba(34, 211, 238, 0.13) 30%,
+    rgba(34, 211, 238, 0.06) 52%,
+    transparent 72%
+  );
+}
+
+/* =========================================
+   MOVING CYAN CIRCLES
+========================================= */
+
+.moving-circle {
+  position: absolute;
+  border-radius: 50%;
+
+  background: rgba(34, 211, 238, 0.015);
+
+  border: 1px solid rgba(34, 211, 238, 0.30);
+
+  box-shadow:
+    0 0 12px rgba(34, 211, 238, 0.12),
+    inset 0 0 12px rgba(34, 211, 238, 0.035);
+
+  will-change: transform;
+
+  animation-name: gentleCircleMove;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+
+/* Different sizes + positions */
+
+.moving-circle-1 {
+  width: 90px;
+  height: 90px;
+  left: 7%;
+  top: 20%;
+
+  animation-duration: 6.5s;
+}
+
+
+.moving-circle-2 {
+  width: 42px;
+  height: 42px;
+  left: 22%;
+  top: 65%;
+
+  animation-duration: 7.5s;
+  animation-delay: -3s;
+}
+
+
+.moving-circle-3 {
+  width: 130px;
+  height: 130px;
+  left: 42%;
+  top: 72%;
+
+  animation-duration: 8.5s;
+  animation-delay: -5s;
+}
+
+
+.moving-circle-4 {
+  width: 55px;
+  height: 55px;
+  right: 25%;
+  top: 25%;
+
+  animation-duration: 7s;
+  animation-delay: -2s;
+}
+
+
+.moving-circle-5 {
+  width: 100px;
+  height: 100px;
+  right: 8%;
+  top: 52%;
+
+  animation-duration: 8s;
+  animation-delay: -6s;
+}
+
+
+.moving-circle-6 {
+  width: 28px;
+  height: 28px;
+  left: 55%;
+  top: 18%;
+
+  animation-duration: 6s;
+  animation-delay: -4s;
+}
+
+
+/* =========================================
+   LIGHTWEIGHT MOVEMENT
+========================================= */
+
+@keyframes gentleCircleMove {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(20px, -22px, 0);
+  }
+
+  100% {
+    transform: translate3d(-15px, 16px, 0);
+  }
+}
+
+
+/* =========================================
+   MOUSE SPOTLIGHT
+========================================= 
+
+.portfolio-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -2;              
+  
+}
+
+.mouse-spotlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;               
+
+  background: radial-gradient(
+    300px circle at
+      var(--mouse-x, 50%)
+      var(--mouse-y, 50%),
+    rgba(34, 211, 238, 0.10),
+    rgba(34, 211, 238, 0.035) 35%,
+    transparent 70%
+  );
+}*/
+
+@layer utilities {
+  .notif-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: 0.75rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid;
+  }
+
+  /* Fixed wrapper — full width, flex-centered (transform wala centering hata diya) */
+  .notif-fixed-wrapper {
+  position: fixed;
+  top: 5.5rem;   /* pehle 1.5rem tha — ab navbar ke neeche */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+  .notif-fixed {
+    pointer-events: auto;
+    min-width: 320px;
+    max-width: 90vw;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  /* SOLID background ab — transparent nahi, taake peeche ka navbar na dikhe */
+  .notif-success {
+    border-color: rgba(34, 211, 238, 0.5);
+    background-color: #0B1526;
+    color: rgb(103, 232, 249);
+  }
+
+  .notif-error {
+    border-color: rgba(248, 113, 113, 0.5);
+    background-color: #1a0f0f;
+    color: rgb(252, 165, 165);
+  }
+}

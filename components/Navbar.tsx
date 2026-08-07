@@ -17,27 +17,27 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
+  const sections = links
+    .map((link) => document.getElementById(link.id))
+    .filter(Boolean) as HTMLElement[];
+
   const handleScroll = () => {
     const scrollPosition = window.scrollY + 150;
 
-    const sections = links.map((link) =>
-      document.getElementById(link.id)
-    );
-
     for (let i = sections.length - 1; i >= 0; i--) {
-      const section = sections[i];
+      if (scrollPosition >= sections[i].offsetTop) {
+        const id = sections[i].id;
 
-      if (
-        section &&
-        scrollPosition >= section.offsetTop
-      ) {
-        setActiveSection(section.id);
+        // Only update when section actually changes
+        setActiveSection((prev) => (prev === id ? prev : id));
         break;
       }
     }
   };
 
-  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("scroll", handleScroll, {
+    passive: true,
+  });
 
   handleScroll();
 

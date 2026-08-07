@@ -53,29 +53,25 @@ export default function Services() {
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 mt-16">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="card p-8 text-center"
-            >
-              <div className="flex justify-center">
-                {service.icon}
-              </div>
+  {services.map((service, index) => (
+    <div
+      key={index}
+      className="card p-8 text-center"
+    >
+      <div className="flex justify-center">
+        {service.icon}
+      </div>
 
-              <h3 className="text-2xl font-semibold mt-6">
-                {service.title}
-              </h3>
+      <h3 className="text-2xl font-semibold mt-6">
+        {service.title}
+      </h3>
 
-              <p className="text-slate-400 mt-4 leading-7">
-                {service.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+      <p className="text-slate-400 mt-4 leading-7">
+        {service.description}
+      </p>
+    </div>
+  ))}
+</div>
 
       </div>
     </section>
